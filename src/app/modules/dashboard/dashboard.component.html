@@ -25,25 +25,37 @@
             </div>
             <div class="row mb-4">
                 <div class="col ">
-                    <p class="mb-3">Total Storage Quata used</p>
-                    <mat-progress-bar mode="determinate" value="40" color="accent"></mat-progress-bar>
+                  <p class="mb-3">Total Storage Quata used</p>
+                  <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="100" aria-valuemin="0"
+                    aria-valuemax="100">
+                    <div class="progress-bar bg-primary" style="width: 65%">65%</div>
+                  </div>
                 </div>
                 <div class="col">
-                    <p class="mb-3">Total Pipelines Running</p>
-                    <mat-progress-bar mode="determinate" value="40" color="warn"></mat-progress-bar>
+                  <p class="mb-3">Total Pipelines Running</p>
+                  <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="100" aria-valuemin="0"
+                    aria-valuemax="100">
+                    <div class="progress-bar bg-warning" style="width: 50%">50%</div>
+                  </div>
                 </div>
-            </div>
-            <div class="row">
+              </div>
+              <div class="row">
                 <div class="col">
-                    <p class="mb-3">Total Containers Running</p>
-                    <mat-progress-bar mode="determinate" value="40" color="primary"></mat-progress-bar>
+                  <p class="mb-3">Total Containers Running</p>
+                  <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="100" aria-valuemin="0"
+                    aria-valuemax="100">
+                    <div class="progress-bar bg-danger" style="width: 80%">80%</div>
+                  </div>
                 </div>
                 <div class="col">
-                    <p class="mb-3">Total Analyasis Running Completed</p>
-                    <mat-progress-bar mode="determinate" value="40" style="color: green;"></mat-progress-bar>
+                  <p class="mb-3">Total Analyasis Running Completed</p>
+                  <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0"
+                    aria-valuemax="100">
+                    <div class="progress-bar bg-success" style="width: 25%">25%</div>
+                  </div>
                 </div>
-            </div>
-        </mat-card>
+              </div>
+            </mat-card>
     </div>
 
     <div class="col-md-6 ">
@@ -71,3 +83,9 @@
 </div>
 
 <br>
+
+<div class="row">
+    <div class="col">
+         <app-table-comp></app-table-comp>
+    </div>
+</div>

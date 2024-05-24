@@ -15,6 +15,10 @@ import { MatCardModule } from '@angular/material/card';
 import { ColumnComponent } from './widgets/column/column.component';
 import { PieComponent } from './widgets/pie/pie.component';
 import { TableCompComponent } from './widgets/table-comp/table-comp.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -33,6 +37,10 @@ import { TableCompComponent } from './widgets/table-comp/table-comp.component';
     MatIconModule,
     MatMenuModule,
     MatListModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatProgressBarModule,
+    MatFormFieldModule,
     RouterModule,
     HighchartsChartModule,
   ],

@@ -46,11 +46,11 @@ export class StackedbarComponent implements OnInit {
       enabled: false
     },
     legend: {
-        align: 'left',
-        x: 70,
-        verticalAlign: 'top',
-        y: 70,
-        floating: true,
+        align: 'center',
+        //x: 70,
+        //verticalAlign: 'top',
+        // y: 70,
+        //floating: true,
         // backgroundColor:
         //     Highcharts.defaultOptions.legend.backgroundColor || 'white',
         borderColor: '#CCC',
@@ -71,13 +71,16 @@ export class StackedbarComponent implements OnInit {
     },
     series: [{
         name: 'Notebook',
-        data: [3, 5, 1, 13]
+        data: [3, 5, 1, 13],
+        color: 'skyblue'
     }, {
         name: 'Gui',
-        data: [14, 8, 8, 12]
+        data: [14, 8, 8, 12],
+        color: 'yellow'
     }, {
         name: 'CL',
-        data: [0, 2, 6, 3]
+        data: [0, 2, 6, 3],
+        color: 'hotpink'
     }]
     };
 

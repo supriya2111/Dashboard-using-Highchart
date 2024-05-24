@@ -43,7 +43,8 @@ export class ColumnComponent implements OnInit {
         {
           name: 'Storage',
           type: 'column',
-          data: [...this.dayWiseStorage]
+          data: [...this.dayWiseStorage],
+          color: '#f455fa'
         }
       ],
      

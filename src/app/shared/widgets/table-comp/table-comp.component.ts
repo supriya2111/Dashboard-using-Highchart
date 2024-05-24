@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -43,7 +43,7 @@ const NAMES: string[] = [
   templateUrl: './table-comp.component.html',
   styleUrls: ['./table-comp.component.css']
 })
-export class TableCompComponent implements OnInit {
+export class TableCompComponent implements OnInit,AfterViewInit{
 
   displayedColumns: string[] = ['id', 'name', 'progress', 'status'];
   dataSource: MatTableDataSource<UserData>;
