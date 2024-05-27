@@ -11,18 +11,27 @@
     <div class="col-md-6">
         <mat-card>
             <h4>Storage Stats</h4>
+            <form>
             <div class=" row mb-3">
-                <div class="col-md-6">
+                <div class="col-md-6 ">
                     <label for="name"> Enter name </label>
                     <span> <input type="text" name="" id="" class="form-control"> </span>
                 </div>
                 <div class="col-md-3 mt-4">
-                    <button class="btn btn-primary">Get Data</button>
+                    <button type="submit" class="btn btn-primary" (click)="getName()">Get Data</button>
                 </div>
             </div>
-            <div class="mb-3 mt-3">
-                <app-column></app-column>
+          </form>
+            <div class="row">
+              <div class="col mt-5">
+                <app-storage-by-user></app-storage-by-user>
+                 <!-- <button class="btn btn-outline-primary form-control">View Details</button> -->
+              </div>
+              <div class="col mb-3 ">               
+                  <app-column></app-column>     
+              </div>
             </div>
+           <hr>
             <div class="row mb-4">
                 <div class="col ">
                   <p class="mb-3">Total Storage Quata used</p>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  reactiveForm!: FormGroup;
+
+
+
+  constructor(private fb:FormBuilder) { }
 
   ngOnInit(): void {
+    this.reactiveForm=this.fb.group({
+      
+    })
   }
 
+  getName(){
+
+  }
 }

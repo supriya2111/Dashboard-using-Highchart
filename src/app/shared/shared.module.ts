@@ -19,6 +19,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { StorageByUserComponent } from './widgets/storage-by-user/storage-by-user.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
      HeaderPartComponent,
      ColumnComponent,
      PieComponent,
-     TableCompComponent
+     TableCompComponent,
+     StorageByUserComponent
   ],
   imports: [
     CommonModule,
@@ -49,7 +51,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     HeaderPartComponent,
     ColumnComponent,
     PieComponent,
-    TableCompComponent
+    TableCompComponent,
+    StorageByUserComponent
   ],
   providers: [
      

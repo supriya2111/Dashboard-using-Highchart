@@ -13,6 +13,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatChipsModule} from '@angular/material/chips';
 import { DashboardComponent } from '../modules/dashboard/dashboard.component';
 import { SharedModule } from '../shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SharedModule } from '../shared/shared.module';
     MatFormFieldModule,
     HighchartsChartModule,
     MatChipsModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ]
 })
 export class DefaultModule { }
