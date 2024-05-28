@@ -11,24 +11,25 @@
     <div class="col-md-6">
         <mat-card>
             <h4>Storage Stats</h4>
-            <form>
+            <form [formGroup]="reactiveForm" (ngSubmit)="getName()" [ngClass]="formStatus">
             <div class=" row mb-3">
                 <div class="col-md-6 ">
-                    <label for="name"> Enter name </label>
-                    <span> <input type="text" name="" id="" class="form-control"> </span>
+                    <label for="username"> Enter name </label>
+                    <span> <input type="text" formControlName="username" id="username" class="form-control"> </span>
                 </div>
                 <div class="col-md-3 mt-4">
-                    <button type="submit" class="btn btn-primary" (click)="getName()">Get Data</button>
+                    <input type="submit" class="btn btn-primary"  value="Get Data" [disabled]="reactiveForm.invalid">
                 </div>
             </div>
           </form>
             <div class="row">
               <div class="col mt-5">
-                <app-storage-by-user></app-storage-by-user>
+                <app-column  [userList]="userList"></app-column>   
+               
                  <!-- <button class="btn btn-outline-primary form-control">View Details</button> -->
               </div>
-              <div class="col mb-3 ">               
-                  <app-column></app-column>     
+              <div class="col mb-3 mt-5 ">               
+                <app-storage-by-user [singleUserQuota]="singleUserQuota"></app-storage-by-user>
               </div>
             </div>
            <hr>
@@ -70,7 +71,7 @@
     <div class="col-md-6 ">
         <div class=" m-5">
             <mat-card>
-                <app-pie></app-pie>
+                <app-drilldown></app-drilldown>
             </mat-card>
         </div>
     </div>

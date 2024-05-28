@@ -20,6 +20,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { StorageByUserComponent } from './widgets/storage-by-user/storage-by-user.component';
+import { DrilldownComponent } from './widgets/drilldown/drilldown.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { StorageByUserComponent } from './widgets/storage-by-user/storage-by-use
      ColumnComponent,
      PieComponent,
      TableCompComponent,
-     StorageByUserComponent
+     StorageByUserComponent,
+     DrilldownComponent,
+   
   ],
   imports: [
     CommonModule,
@@ -52,7 +55,8 @@ import { StorageByUserComponent } from './widgets/storage-by-user/storage-by-use
     ColumnComponent,
     PieComponent,
     TableCompComponent,
-    StorageByUserComponent
+    StorageByUserComponent,
+    DrilldownComponent
   ],
   providers: [
      

@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import HC_exporting from 'highcharts/modules/exporting';
+import { QuotaService } from 'src/app/Serivce/quota.service';
+import { Quota } from 'src/app/interfaces/quota.interface';
 
 @Component({
   selector: 'app-column',
@@ -9,15 +11,20 @@ import HC_exporting from 'highcharts/modules/exporting';
 })
 export class ColumnComponent implements OnInit {
 
- 
+  @Input()
+  userList: Quota[] = [];
+
+  usernames = ['Supriya','Jayesh','Prachi','Preet','palash','ajay','pnq']
   dayWiseStorage = [4, 6 ,7, 10, 9, 8, 7]; 
 
   Highcharts = Highcharts;
-  chartOptions = {};
+  chartOptions: any = {};
 
-  constructor() { }
+  constructor(private quotaService: QuotaService) { }
 
   ngOnInit(): void {
+    //this.extractData();
+
     this.chartOptions = {
       chart: {
         type: 'column'
@@ -25,16 +32,8 @@ export class ColumnComponent implements OnInit {
       title: {
         text: 'Storage Usage Statistics'
       },
-      plotOptions: {
-        series: {
-          cumulative: true,
-          pointStart: Date.UTC(2023, 0, 1), // Adjust if data starts on a different date
-          pointIntervalUnit: 'day'
-        }
-      },
       xAxis: {
-        minRange: 3 * 24 * 36e5, // Minimum visible range in milliseconds (3 days)
-        type: 'datetime' // Set axis type to interpret data as timestamps
+        categories: [...this.usernames]
       },
       yAxis: {
         title: {
@@ -64,7 +63,7 @@ export class ColumnComponent implements OnInit {
           type: 'column',
           data: [...this.dayWiseStorage]
         }
-      ]    
+      ]
     };
 
     HC_exporting(Highcharts); // For exporting data functionality
@@ -76,4 +75,10 @@ export class ColumnComponent implements OnInit {
       );
     }, 300);
   }
+
+  // extractData(): void {
+  //   // Extract usernames and their corresponding quotaUsed values
+  //   this.usernames = this.userList.map(user => user.username);
+  //   this.dayWiseStorage = this.userList.map(user => user.quotaUsed);
+  // }
 }

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import HC_exporting from 'highcharts/modules/exporting';
+import { Quota } from 'src/app/interfaces/quota.interface';
 
 @Component({
   selector: 'app-storage-by-user',
@@ -9,6 +10,12 @@ import HC_exporting from 'highcharts/modules/exporting';
 })
 export class StorageByUserComponent implements OnInit {
 
+  @Input()
+  singleUserQuota!: Quota;
+ 
+  username: string = 'supriya'
+  quotaUsed: number =4;
+  
   Highcharts = Highcharts;
   chartOptions = {};
 
@@ -24,7 +31,8 @@ export class StorageByUserComponent implements OnInit {
         plotShadow: false,
       },
       title: {
-        text: 'Quota used'
+       text: `Quota used by ${this.username}`
+     //  text: 'Quota used by '
       },
       exporting: {
         enabled: false
@@ -35,6 +43,7 @@ export class StorageByUserComponent implements OnInit {
       tooltip: {
         pointFormat: '{series.name}: <b>{point.y} GB</b>'
       },
+      colors: ['#FF0000', '#00FF00', '#0000FF', '#FFFF00'],
       plotOptions: {
         pie: {
           allowPointSelect: true,
@@ -52,14 +61,22 @@ export class StorageByUserComponent implements OnInit {
         innerSize: '80%',
         showInLegend: false,
         dataLabels: {
-          enabled: false
-        },
+          enabled: true,
+          distance: '-100%',
+          format: `${this.quotaUsed} GB`,
+          style: {
+              fontWeight: 'bold',
+              fontSize: '18px'
+          },
+       },
         colorByPoint: true,
         data: [{
           name: 'Quota used',
           align: 'center',
-          y: 4 // Storage used in GB
-        }]
+         // y: this.singleUserQuota.quotaUsed // Storage used in GB
+         y:4
+        }],
+       
       }]
     };
     

@@ -12,7 +12,6 @@ export class PieComponent implements OnInit {
 
 
   chartOptions!: {};
-
   Highcharts = Highcharts;
 
   constructor() { }
